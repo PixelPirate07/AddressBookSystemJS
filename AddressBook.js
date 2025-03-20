@@ -69,3 +69,19 @@ try {
 } catch (error) {
     console.error("Error Occurred: " + error);
 }
+
+// UC 4
+
+function editContact(name, updatedDetails) {
+    let contact = addressBookArr.find(contact => contact.firstName === name);
+
+    if (contact) {
+        Object.assign(contact, updatedDetails);
+        console.log(`Contact Updated Successfully: \n${contact.toString()}`);
+    } else {
+        console.log(`Contact with name '${name}' not found.`);
+    }
+}
+
+// Sample Contact Edit
+editContact("Dhairya", { address: "Linking Road", city: "Bangalore", state: "Karnataka" });
