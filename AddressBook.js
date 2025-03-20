@@ -139,3 +139,24 @@ try {
 } catch (error) {
     console.error("Error Occurred: " + error);
 }
+
+// UC 8
+
+function searchContactByCityOrState(locationType, locationName) {
+    let foundContacts = addressBookArr.filter(contact =>
+        locationType === "city"
+            ? contact.city === locationName
+            : contact.state === locationName
+    );
+
+    if (foundContacts.length > 0) {
+        console.log(`Contacts Found in ${locationType} '${locationName}':`);
+        foundContacts.forEach(contact => console.log(contact.toString()));
+    } else {
+        console.log(`No Contacts Found in ${locationType} '${locationName}'.`);
+    }
+}
+
+searchContactByCityOrState("city", "Mumbai"); 
+searchContactByCityOrState("state", "Maharashtra"); 
+searchContactByCityOrState("city", "Delhi");        
