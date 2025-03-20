@@ -104,3 +104,12 @@ function deleteContact(name) {
 
 
 deleteContact("Aryan");
+
+// UC 6
+
+function getContactCount() {
+    let contactCount = addressBookArr.reduce(count => count + 1, 0);
+    console.log(`Total Number of Contacts in Address Book: ${contactCount}`);
+}
+
+getContactCount();
