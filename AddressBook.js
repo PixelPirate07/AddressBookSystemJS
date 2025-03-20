@@ -52,3 +52,20 @@ try {
 } catch (error) {
     console.error("Error Occurred: " + error);
 }
+
+// UC 3
+
+let addressBookArr = [];
+
+try {
+    let contact1 = new Contact("Dhairya", "Pandey", "MG Road", "Mumbai", "Maharashtra", "400001", "9876543210", "dhairya@example.com");
+    let contact2 = new Contact("Aryan", "Sharma", "Park Street", "Delhi", "Delhi", "110001", "9123456789", "aryan@example.com");
+
+    addressBookArr.push(contact1);
+    addressBookArr.push(contact2);
+
+    console.log("Contacts in Address Book:");
+    addressBookArr.forEach(contact => console.log(contact.toString()));
+} catch (error) {
+    console.error("Error Occurred: " + error);
+}
