@@ -182,3 +182,24 @@ function viewPersonsByCityOrState(locationType) {
 
 viewPersonsByCityOrState("city");   
 viewPersonsByCityOrState("state");  
+
+// UC 10
+
+function countByCityOrState(locationType) {
+    let countByLocation = {};
+
+    addressBookArr.forEach(contact => {
+        let location = locationType === "city" ? contact.city : contact.state;
+
+        if (!countByLocation[location]) {
+            countByLocation[location] = 0;
+        }
+        countByLocation[location]++;
+    });
+
+    console.log(`Number of Contacts by ${locationType.charAt(0).toUpperCase() + locationType.slice(1)}:`);
+    console.log(countByLocation);
+}
+
+countByCityOrState("city");  
+countByCityOrState("state");  
