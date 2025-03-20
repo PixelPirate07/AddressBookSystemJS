@@ -113,3 +113,29 @@ function getContactCount() {
 }
 
 getContactCount();
+
+// UC 7
+
+function addContact(contact) {
+    let isDuplicate = addressBookArr.some(existingContact => 
+        existingContact.firstName === contact.firstName && 
+        existingContact.lastName === contact.lastName
+    );
+
+    if (isDuplicate) {
+        console.log(`Duplicate Contact Found: ${contact.firstName} ${contact.lastName} - Contact Not Added.`);
+    } else {
+        addressBookArr.push(contact);
+        console.log(`Contact Added Successfully: ${contact.toString()}`);
+    }
+}
+
+try {
+    let contact3 = new Contact("Rohan", "Verma", "Baker Street", "London", "UK", "567890", "9876543210", "rohan@example.com");
+    let duplicateContact = new Contact("Dhairya", "Pandey", "Linking Road", "Mumbai", "Maharashtra", "400001", "9876543210", "dhairya@example.com");
+
+    addContact(contact3);       
+    addContact(duplicateContact); 
+} catch (error) {
+    console.error("Error Occurred: " + error);
+}
