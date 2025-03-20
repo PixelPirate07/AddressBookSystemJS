@@ -215,3 +215,16 @@ function sortByName() {
 
 
 sortByName();
+
+// UC 12
+
+function sortByField(field) {
+    let sortedContacts = addressBookArr.sort((a, b) => a[field].localeCompare(b[field]));
+
+    console.log(`Sorted Contacts by ${field.charAt(0).toUpperCase() + field.slice(1)}:`);
+    sortedContacts.forEach(contact => console.log(contact.toString()));
+}
+
+sortByField("city");   
+sortByField("state");  
+sortByField("zip");    
