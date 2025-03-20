@@ -203,3 +203,15 @@ function countByCityOrState(locationType) {
 
 countByCityOrState("city");  
 countByCityOrState("state");  
+
+// UC 11
+
+function sortByName() {
+    let sortedContacts = addressBookArr.sort((a, b) => a.firstName.localeCompare(b.firstName));
+
+    console.log("Sorted Contacts Alphabetically by First Name:");
+    sortedContacts.forEach(contact => console.log(contact.toString()));
+}
+
+
+sortByName();
