@@ -83,5 +83,24 @@ function editContact(name, updatedDetails) {
     }
 }
 
-// Sample Contact Edit
+
 editContact("Dhairya", { address: "Linking Road", city: "Bangalore", state: "Karnataka" });
+
+// UC 5
+
+function deleteContact(name) {
+    let contactIndex = addressBookArr.findIndex(contact => contact.firstName === name);
+
+    if (contactIndex !== -1) {
+        addressBookArr.splice(contactIndex, 1); 
+        console.log(`Contact with name '${name}' deleted successfully.`);
+    } else {
+        console.log(`Contact with name '${name}' not found.`);
+    }
+
+    console.log("Updated Address Book:");
+    addressBookArr.forEach(contact => console.log(contact.toString()));
+}
+
+
+deleteContact("Aryan");
