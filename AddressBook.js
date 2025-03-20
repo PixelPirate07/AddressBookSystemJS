@@ -160,3 +160,25 @@ function searchContactByCityOrState(locationType, locationName) {
 searchContactByCityOrState("city", "Mumbai"); 
 searchContactByCityOrState("state", "Maharashtra"); 
 searchContactByCityOrState("city", "Delhi");        
+
+// UC 9
+
+function viewPersonsByCityOrState(locationType) {
+    let personsByLocation = {};
+
+    addressBookArr.forEach(contact => {
+        let location = locationType === "city" ? contact.city : contact.state;
+
+        if (!personsByLocation[location]) {
+            personsByLocation[location] = [];
+        }
+        personsByLocation[location].push(contact.toString());
+    });
+
+    console.log(`Persons Grouped by ${locationType.charAt(0).toUpperCase() + locationType.slice(1)}:`);
+    console.log(personsByLocation);
+}
+
+
+viewPersonsByCityOrState("city");   
+viewPersonsByCityOrState("state");  
